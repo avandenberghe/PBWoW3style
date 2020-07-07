@@ -1,6 +1,7 @@
-## PBWoW 3 Style for phpBB
+## PBWoW 3 Style for phpBB 3.2.8
 
-Authors @Paybas, @Sajaki
+Author @Paybas, @Sajaki
+
 Updated by @Galixte
 
 ## requirements
@@ -8,11 +9,14 @@ Updated by @Galixte
 - pbwowExt (optional)
 
 ## Support
-- https://www.avathar.be/forum/viewforum.php?f=82
+- http://www.avathar.be/bbdkp/viewforum.php?f=82
 - https://www.phpbb.com/customise/db/style/pbwow3/support
 - http://www.ezcom-fr.com/viewtopic.php?f=13&t=74 (in French)
 
 ## Changes
+3.2.10 (07-07-2020)
+- support for S_PBWOW_SMALL_RANKS
+
 3.2.9 (02-02-2020)
 - updated for phpBB 3.2.9
 
