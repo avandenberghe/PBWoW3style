@@ -138,19 +138,31 @@
 		<dl class="postprofile" id="profile{{ postrow.POST_ID }}"{% if postrow.S_POST_HIDDEN %} style="display: none;"{% endif %}>
 			<dt class="{% if postrow.RANK_TITLE or postrow.RANK_IMG %}has-profile-rank{% else %}no-profile-rank{% endif %} {% if postrow.POSTER_AVATAR %}has-avatar{% else %}no-avatar{% endif %}">
 				<div class="avatar-container">
+					{% if S_PBWOW_AVATARS %}
+					<div class="icons-frame">
+						<div class="game-icon-a"></div>
+						<div class="game-icon-b"></div>
+						<div class="game-icon-c"></div>
+					</div>
+					{% endif %}
 					{% EVENT viewtopic_body_avatar_before %}
 					{% if postrow.POSTER_AVATAR %}
 						{% if postrow.U_POST_AUTHOR %}<a href="{{ postrow.U_POST_AUTHOR }}" class="avatar">{{ postrow.POSTER_AVATAR }}</a>{% else %}<span class="avatar">{{ postrow.POSTER_AVATAR }}</span>{% endif %}
 					{% endif %}
-					{% EVENT viewtopic_body_avatar_after %}
+				{% if S_PBWOW_SMALL_RANKS and (postrow.RANK_TITLE or postrow.RANK_IMG) %}
+				<div class="rank-icon">
+					 {{ postrow.RANK_IMG }}
+				</div>
+				{% endif %}
+				{% EVENT viewtopic_body_avatar_after %}
 				</div>
 				{% EVENT viewtopic_body_post_author_before %}
 				{% if not postrow.U_POST_AUTHOR %}<strong>{{ postrow.POST_AUTHOR_FULL }}</strong>{% else %}{{ postrow.POST_AUTHOR_FULL }}{% endif %}
 				{% EVENT viewtopic_body_post_author_after %}
 			</dt>
-
 			{% EVENT viewtopic_body_postrow_rank_before %}
-			{% if not S_PBWOW_SMALL_RANKS and (postrow.RANK_TITLE or postrow.RANK_IMG) %}<dd class="profile-rank">{{ postrow.RANK_TITLE }}{% if postrow.RANK_TITLE and postrow.RANK_IMG %}<br />{% endif %}{{ postrow.RANK_IMG }}</dd>{% endif %}
+			{% if not S_PBWOW_SMALL_RANKS and (postrow.RANK_TITLE or postrow.RANK_IMG) %}
+		<dd class="profile-rank">{{ postrow.RANK_TITLE }}{% if postrow.RANK_TITLE and postrow.RANK_IMG %}<br />{% endif %}{{ postrow.RANK_IMG }}</dd>{% endif %}
 			{% EVENT viewtopic_body_postrow_rank_after %}
 
 		{% if postrow.POSTER_POSTS != '' %}<dd class="profile-posts"><strong>{{ lang('POSTS') }}{{ lang('COLON') }}</strong> {% if postrow.U_SEARCH !== '' %}<a href="{{ postrow.U_SEARCH }}">{% endif %}{{ postrow.POSTER_POSTS }}{% if postrow.U_SEARCH !== '' %}</a>{% endif %}</dd>{% endif %}
@@ -395,7 +407,6 @@
 		<div class="back2top">
 			{% EVENT viewtopic_body_postrow_back2top_prepend %}
 			<a href="#top" class="top" title="{{ lang('BACK_TO_TOP') }}">
-				<!--- <i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>   -->
 				<span class="sr-only">{{ lang('BACK_TO_TOP') }}</span>
 			</a>
 			{% EVENT viewtopic_body_postrow_back2top_append %}

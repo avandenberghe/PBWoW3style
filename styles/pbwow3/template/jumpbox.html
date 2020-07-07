@@ -2,28 +2,24 @@
 	{% if S_VIEWTOPIC %}
 	<p class="jumpbox-return">
 		<a href="{{ U_VIEW_FORUM }}" class="left-box arrow-{{ S_CONTENT_FLOW_BEGIN }}" accesskey="r">
-			<!--<i class="icon fa-angle-{{ S_CONTENT_FLOW_BEGIN }} fa-fw icon-black" aria-hidden="true"></i>-->
 			<span>{{ lang('RETURN_TO_FORUM') }}</span>
 		</a>
 	</p>
 	{% elseif S_VIEWFORUM %}
 	<p class="jumpbox-return">
 		<a href="{{ U_INDEX }}" class="left-box arrow-{{ S_CONTENT_FLOW_BEGIN }}" accesskey="r">
-			<!--<i class="icon fa-angle-{{ S_CONTENT_FLOW_BEGIN }} fa-fw icon-black" aria-hidden="true"></i>-->
 			<span>{{ lang('RETURN_TO_INDEX') }}</span>
 		</a>
 	</p>
 	{% elseif SEARCH_TOPIC %}
 	<p class="jumpbox-return">
 		<a class="left-box arrow-{{ S_CONTENT_FLOW_BEGIN }}" href="{{ U_SEARCH_TOPIC }}" accesskey="r">
-			<!--<i class="icon fa-angle-{{ S_CONTENT_FLOW_BEGIN }} fa-fw icon-black" aria-hidden="true"></i>-->
 			<span>{{ lang('RETURN_TO_TOPIC') }}</span>
 		</a>
 	</p>
 	{% elseif S_SEARCH_ACTION %}
 	<p class="jumpbox-return">
 		<a class="left-box arrow-{{ S_CONTENT_FLOW_BEGIN }}" href="{{ U_SEARCH }}" title="{{ lang('SEARCH_ADV') }}" accesskey="r">
-			<!--<i class="icon fa-angle-{{ S_CONTENT_FLOW_BEGIN }} fa-fw icon-black" aria-hidden="true"></i>-->
 			<span>{{ lang('GO_TO_SEARCH_ADV') }}</span>
 		</a>
 	</p>

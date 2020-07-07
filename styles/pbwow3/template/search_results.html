@@ -117,7 +117,7 @@
 								{% if searchresults.S_HAS_POLL %}<i class="icon fa-bar-chart fa-fw" aria-hidden="true"></i>{% endif %}
 								{% if searchresults.ATTACH_ICON_IMG %}<i class="icon fa-paperclip fa-fw" aria-hidden="true"></i>{% endif %}
 								{% EVENT topiclist_row_topic_by_author_before %}
-								{{ lang('POST_BY_AUTHOR') }} {% EVENT search_results_topic_author_username_prepend %}{{ searchresults.TOPIC_AUTHOR_FULL }}{% EVENT search_results_topic_author_username_append %} &raquo; {{ searchresults.FIRST_POST_TIME }} &raquo; {{ lang('IN') }} <a href="{{ searchresults.U_VIEW_FORUM }}">{{ searchresults.FORUM_TITLE }}</a>
+								{{ lang('POST_BY_AUTHOR') }} {% EVENT search_results_topic_author_username_prepend %}{{ searchresults.TOPIC_AUTHOR_FULL }}{% EVENT search_results_topic_author_username_append %} &raquo; <time datetime="{{ searchresults.FIRST_POST_TIME_RFC3339 }}">{{ searchresults.FIRST_POST_TIME }}</time> &raquo; {{ lang('IN') }} <a href="{{ searchresults.U_VIEW_FORUM }}">{{ searchresults.FORUM_TITLE }}</a>
 								{% EVENT topiclist_row_topic_by_author_after %}
 							</div>
 
@@ -194,7 +194,7 @@
 
 		<div class="postbody">
 			<h3><a href="{{ searchresults.U_VIEW_POST }}">{{ searchresults.POST_SUBJECT }}</a></h3>
-			<div class="content">{searchresults.MESSAGE}</div>
+			<div class="content">{{ searchresults.MESSAGE }}</div>
 			{% EVENT search_results_content_after %}
 		</div>
 	{% endif %}

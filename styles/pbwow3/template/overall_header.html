@@ -23,11 +23,11 @@
 {% endif %}
 
 <!--
-	phpBB style name: PBWoW 3.2.1
+	phpBB style name: PBWoW 3.2.9
 	Based on style:   prosilver (this is the default phpBB3 style)
 	Original author:  Tom Beddard ( http://www.subBlue.com/ )
 	Modified by: PayBas ( http://www.pbwow.com/ )
-	Maintained by: Sajaki ( http://www.avathar.be/ )
+	Maintained by: Sajaki ( https://www.avathar.be/ )
 -->
 
 {% if S_ALLOW_CDN %}
@@ -103,9 +103,7 @@
 				<fieldset>
 					<input name="keywords" id="keywords" type="search" maxlength="128" title="{{ lang('SEARCH_KEYWORDS') }}" class="inputbox search tiny" size="20" value="{{ SEARCH_WORDS }}" placeholder="{{ lang('SEARCH_MINI') }}" />
 					<button class="button icon-button search-icon" type="submit" title="{{ lang('SEARCH') }}"></button>
-					<a href="{{ U_SEARCH }}" class="button icon-button search-adv-icon" title="{{ lang('SEARCH_ADV') }}">
-						<!-- <i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">{{ lang('SEARCH_ADV') }}</span> -->
-					</a>
+					<a href="{{ U_SEARCH }}" class="button icon-button search-adv-icon" title="{{ lang('SEARCH_ADV') }}"></a>
 					{{ S_SEARCH_HIDDEN_FIELDS }}
 				</fieldset>
 				</form>
@@ -132,5 +130,4 @@
 			</div>
 		</div>
 		{% endif %}
-
 		{% EVENT overall_header_content_before %}

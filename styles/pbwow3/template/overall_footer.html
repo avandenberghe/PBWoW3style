@@ -8,8 +8,14 @@
 
 	<div class="copyright">
 		{% EVENT overall_footer_copyright_prepend %}
-		{{ CREDIT_LINE }}
-		{% if TRANSLATION_INFO %}<br />{{ TRANSLATION_INFO }}{% endif %}
+		<p class="footer-row">
+			<span class="footer-copyright">{{ CREDIT_LINE }}</span>
+		</p>
+		{% if TRANSLATION_INFO %}
+		<p class="footer-row">
+			<span class="footer-copyright">{{ TRANSLATION_INFO }}</span>
+		</p>
+		{% endif %}
 		{% EVENT overall_footer_copyright_append %}
 		<p class="footer-row" role="menu">
 			<a class="footer-link" href="{{ U_PRIVACY }}" title="{{ lang('PRIVACY_LINK') }}" role="menuitem">
@@ -202,7 +208,7 @@ jQuery(function($) {
 					"message": "{{ lang('COOKIE_CONSENT_MSG')|escape('js') }}",
 					"dismiss": "{{ lang('COOKIE_CONSENT_OK')|escape('js') }}",
 					"link": "{{ lang('COOKIE_CONSENT_INFO')|escape('js') }}",
-					"href": "{UA_PRIVACY}"
+					"href": "{{ UA_PRIVACY }}"
 					}
 				});
 			});

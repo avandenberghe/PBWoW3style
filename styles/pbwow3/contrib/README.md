@@ -1,7 +1,5 @@
 ## PBWoW 3 Style for phpBB 3.2.8
 
-### Including assets
-
 Author @Paybas, @Sajaki
 
 Updated by @Galixte
@@ -12,8 +10,16 @@ Updated by @Galixte
 
 ## Support
 - http://www.avathar.be/bbdkp/viewforum.php?f=82
+- https://www.phpbb.com/customise/db/style/pbwow3/support
+- http://www.ezcom-fr.com/viewtopic.php?f=13&t=74 (in French)
 
 ## Changes
+3.2.10 (07-07-2020)
+- support for S_PBWOW_SMALL_RANKS
+
+3.2.9 (02-02-2020)
+- updated for phpBB 3.2.9
+
 3.2.8 (20-10-2019)
 - updated for phpBB 3.2.8 (new events)
 
@@ -21,8 +27,8 @@ Updated by @Galixte
 - updated for phpBB 3.2.7 (new events)
 
 3.2.2 (16-03-2018)
-- updated for phpBB 3.2.2
-- fix missing mark read checkbox in navbar
+- updated for phpBB 3.2.2 (markup changes and new events)
+- fixed missing 'mark read' link in navbar
 
 3.2.1.6 (15-10-2017)
 - fix contact icon appearance

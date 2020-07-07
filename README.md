@@ -1,7 +1,6 @@
-## PBWoW 3 Style for phpBB 3.2.8
+## PBWoW 3 Style for phpBB
 
-Author @Paybas, @Sajaki
-
+Authors @Paybas, @Sajaki
 Updated by @Galixte
 
 ## requirements

@@ -12,8 +12,10 @@
 
 			{% for navlinks in loops.navlinks %}
 			{% EVENT overall_header_navlink_prepend %}
-			<span class="crumb" {{ definition.MICRODATA }}{% if navlinks.MICRODATA %} {{ navlinks.MICRODATA }}{% endif %}><a href="{{ navlinks.U_VIEW_FORUM }}" itemtype="https://schema.org/Thing" itemscope itemprop="item"><span itemprop="name">{{ navlinks.FORUM_NAME }}</span></a><meta itemprop="position" content="{{ navlink_position }}{% set navlink_position = navlink_position + 1 %}" /></span>
-			<span class="crumb" {$MICRODATA}<!-- IF navlinks.MICRODATA --> {navlinks.MICRODATA}<!-- ENDIF -->><a href="{navlinks.U_VIEW_FORUM}" itemprop="url"><span itemprop="title">{navlinks.FORUM_NAME}</span></a></span>
+			<span class="crumb" {{ definition.MICRODATA }}{% if navlinks.MICRODATA %} {{ navlinks.MICRODATA }}{% endif %}>
+				<a href="{{ navlinks.U_VIEW_FORUM }}" itemtype="https://schema.org/Thing" itemscope itemprop="item"><span itemprop="name">{{ navlinks.FORUM_NAME }}</span></a>
+				<meta itemprop="position" content="{{ navlink_position }}{% set navlink_position = navlink_position + 1 %}" />
+			</span>
 			{% EVENT overall_header_navlink_append %}
 			{% endfor %}
 			{% if S_VIEWTOPIC %}<span class="crumb crumb-topic"><a href="{{ U_VIEW_TOPIC }}">{{ TOPIC_TITLE }}</a></span>{% endif %}
@@ -30,18 +32,18 @@
 
 		{% if not S_IS_BOT %}
 			{% if U_SITE_HOME %}
-				{% if S_USER_LOGGED_IN and U_MARK_FORUMS %}<li class="rightside small-icon icon-mark-read"><a href="{U_MARK_FORUMS}" accesskey="m" data-ajax="mark_forums_read" title="{{ lang('MARK_FORUMS_READ') }}"></a></li>{% endif %}
+				{% if S_USER_LOGGED_IN and U_MARK_FORUMS %}<li class="rightside small-icon icon-mark-read"><a href="{{ U_MARK_FORUMS }}" accesskey="m" data-ajax="mark_forums_read" title="{{ lang('MARK_FORUMS_READ') }}"></a></li>{% endif %}
 			{% elseif S_INDEX %}
-				{% if S_USER_LOGGED_IN and U_MARK_FORUMS %}<li class="rightside small-icon icon-mark-read"><a href="{U_MARK_FORUMS}" accesskey="m" data-ajax="mark_forums_read" title="{{ lang('MARK_FORUMS_READ') }}"></a></li>{% endif %}
+				{% if S_USER_LOGGED_IN and U_MARK_FORUMS %}<li class="rightside small-icon icon-mark-read"><a href="{{ U_MARK_FORUMS }}" accesskey="m" data-ajax="mark_forums_read" title="{{ lang('MARK_FORUMS_READ') }}"></a></li>{% endif %}
 			{% elseif S_VIEWFORUM %}
-				{% if S_HAS_SUBFORUM and U_MARK_FORUMS %}<li class="rightside small-icon icon-mark-read"><a href="{U_MARK_FORUMS}" data-ajax="mark_forums_read" title="{{ lang('MARK_SUBFORUMS_READ') }}"></a></li>{% endif %}
+				{% if S_HAS_SUBFORUM and U_MARK_FORUMS %}<li class="rightside small-icon icon-mark-read"><a href="{{ U_MARK_FORUMS }}" data-ajax="mark_forums_read" title="{{ lang('MARK_SUBFORUMS_READ') }}"></a></li>{% endif %}
 			{% elseif S_VIEWTOPIC %}
-				{% if U_VIEW_UNREAD_POST %}<li class="rightside small-icon icon-view"><a href="{U_VIEW_UNREAD_POST}" title="{{ lang('VIEW_UNREAD_POST') }}"></a></li>{% endif %}
+				{% if U_VIEW_UNREAD_POST %}<li class="rightside small-icon icon-view"><a href="{{ U_VIEW_UNREAD_POST }}" title="{{ lang('VIEW_UNREAD_POST') }}"></a></li>{% endif %}
 			{% elseif SEARCH_MATCHES and not S_IN_SEARCH %}
 				{% if SEARCH_TOPIC %}
-					<li class="rightside"><a class="arrow-{S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH_TOPIC}">{{ lang('RETURN_TO_TOPIC') }}</a></li>
+					<li class="rightside"><a class="arrow-{{ S_CONTENT_FLOW_BEGIN }}" href="{{ U_SEARCH_TOPIC }}">{{ lang('RETURN_TO_TOPIC') }}</a></li>
 				{% else %}
-					<li class="rightside"><a class="arrow-{S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH}" title="{{ lang('SEARCH_ADV') }}">{{ lang('GO_TO_SEARCH_ADV') }}</a></li>
+					<li class="rightside"><a class="arrow-{{ S_CONTENT_FLOW_BEGIN }}" href="{{ U_SEARCH }}" title="{{ lang('SEARCH_ADV') }}">{{ lang('GO_TO_SEARCH_ADV') }}</a></li>
 				{% endif %}
 			{% endif %}
 		{% endif %}
