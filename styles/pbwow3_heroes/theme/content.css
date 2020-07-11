@@ -1047,7 +1047,7 @@ fieldset.polls dl.most-votes dd.resultbar div:before {
     width: 64px;
     overflow: hidden;
 	background: none;
-	padding: 10px 10px 10px 12px;
+	padding: 30px 10px 10px 12px;
 }
 
 .postprofile .avatar:after {
