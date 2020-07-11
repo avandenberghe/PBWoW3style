@@ -1,0 +1,197 @@
+/*  phpBB3 Style Sheet
+	--------------------------------------------------------------
+	Style name:			PBWoW3
+	Based on style:		prosilver (the default phpBB 3.2.x style)
+	Original author:	Tom Beddard ( http://www.subblue.com/ )
+	Modified by:		PayBas ( http://pbwow.com/ )
+	--------------------------------------------------------------
+*/
+
+
+@import url("base.css?v=3.2");
+@import url("common.css?v=3.2");
+@import url("links.css?v=3.2");
+@import url("content.css?v=3.2");
+@import url("buttons.css?v=3.2");
+@import url("cp.css?v=3.2");
+@import url("forms.css?v=3.2");
+@import url("icons.css?v=3.2");
+@import url("colours.css?v=3.2");
+@import url("imageset.css?v=3.2");
+@import url("custom.css?v=3.2");
+@import url("responsive.css?v=3.2");
+@import url("extensions.css?v=3.2");
+
+/* Header & main body
+--------------------------------------------- */
+body.pbwow3 {
+	background-color: #0D0119;
+	background-image: url("./images/global-bg2.jpg");
+	color: #8EB1BC;
+	background-attachment: scroll;
+}
+
+body.pbwow3 .logo {
+	background: url("./images/logo2.png") no-repeat;
+	background-size: 100% 100%;
+	width: 288px;
+	height: 159px;
+	margin-bottom: 10px;
+	display: block;
+}
+
+body.pbwow3 #video-background {
+	display: none;
+}
+
+#video-container {
+	background: url("./videos/heroes.jpg") no-repeat 49.999% 0;
+	height: 736px;
+	top: -50px;
+	width: 1940px;
+}
+#video-border {
+	position: relative;
+	background: url("./videos/video-border3.jpg") repeat-x 0 0;
+	top: 736px;
+	height: 200px;
+}
+
+body.pbwow3 #page-body:before {
+	background: url("./images/blue-background.png") no-repeat scroll 50% 0 rgba(0, 0, 0, 0);
+	position: absolute;
+	width: 100%;
+	height: 316px;
+	left: auto;
+	top: auto;
+	margin-left: -20px; /* compensate for the padding */
+	bottom: -131px;
+	box-shadow: none;
+	z-index: -1;
+
+}
+body.pbwow3 #page-body {
+	background: #060b10;
+	background-color: rgba(11, 1, 22, 0.7);
+	background-image: linear-gradient(rgba(59, 31, 78, 0.5), rgba(0, 216, 255, 0.5)), linear-gradient(rgba(59, 31, 78, 0.5), rgba(0, 216, 255, 0.5));
+	background-size: 1px 100%;
+	background-position: 100% 0, 0 0;
+	background-repeat: no-repeat;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #00D8FF;
+	padding: 1px 20px 20px;
+}
+
+body.pbwow3_heroes.section-index.videobg .headerbar,
+body.pbwow3_heroes.videobg-all .headerbar {
+	background: none;
+}
+body.pbwow3_heroes.section-index.videobg #page-body, body.pbwow3_heroes.videobg-all #page-body,
+body.pbwow3_heroes.section-index.videobg #body-header, body.pbwow3_heroes.videobg-all #body-header {
+	background-color: rgba(8,1,22,0.90);
+}
+
+
+body.section-viewforum .stat-block p,
+body.section-viewtopic .stat-block p {
+	background: none;
+	border: none;
+	box-shadow: none;
+	border-top: 1px solid #172040;
+}
+
+@media only screen and (max-width: 999px), only screen and (max-device-width: 999px) {
+	body.pbwow3 {
+		/*background-image: url("./images/theme/wod-small.png");*/
+		background-position: 0 0;
+	}
+
+	body.pbwow3.topbar {
+		background-position: 0 41px;
+	}
+}
+
+@media screen and (max-width: 859px) {
+	body.pbwow3 #logo {
+		width: 200px;
+		height: 100px;
+		margin: 0 0 25px 0;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	body.pbwow3 #logo {
+		display: none;
+	}
+}
+
+/* Tweaks
+--------------------------------------------- */
+.notouch.section-viewtopic .post-buttons {
+	opacity: 0;
+	transition: opacity .4s;
+}
+
+.notouch.section-viewtopic .post:hover .post-buttons {
+	opacity: 1;
+}
+
+ul.linklist > li,
+#quick-links {
+	margin-right: 10px;
+}
+
+ul.linklist > li.rightside {
+	margin-left: 10px;
+}
+
+ul.linklist > li a:hover {
+	text-decoration: none;
+}
+
+.action-bar.compact {
+	display: none;
+}
+
+input#pf_pbbnetavatar, label[for=pf_pbbnetavatar] {
+	display: none;
+}
+
+.topic_poll + hr {
+	display: none;
+}
+
+/* =Media queries (all >700px rules are in responsive.css)
+-------------------------------------------------------------- */
+
+@media screen and (max-width: 999px) {
+	.forum-blocks li.row,
+	.index-left .forum-blocks li.row {
+		width: 100%;
+		min-height: 60px;
+	}
+
+	.forum-blocks li.row dl {
+		min-height: inherit;
+	}
+
+	.postprofile {
+		background-position: 50% 0;
+	}
+}
+
+/* =Media queries
+-------------------------------------------------------------- */
+@media screen and (max-width: 859px), only screen and (max-device-width: 859px) {
+	#logo {
+		width: 216px;
+		height: 120px;
+	}
+}
+
+@media screen and (min-width: 1000px), only screen and (max-device-width: 1000px) {
+	#wrapper {
+		min-height: 850px;
+	}
+}

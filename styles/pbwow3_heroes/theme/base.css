@@ -1,0 +1,28 @@
+/* --------------------------------------------------------------
+	$Base
+-------------------------------------------------------------- */
+
+body {
+	color: #CCCCCC;
+}
+
+hr {
+	border-color: #7C7C7C;
+    border-top-color: #444;
+}
+
+a  { 
+	color: #FFB019;
+	text-decoration: none;  
+}
+
+a:hover { 
+	color: #FFFFFF; 
+	text-decoration: none;  
+}
+
+a:focus,
+a:active	{
+	color: #00C0FF;
+	text-decoration: underline;
+}

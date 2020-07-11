@@ -1,0 +1,23 @@
+<script>
+jQuery(function($) {
+	'use strict';
+
+	if($(window).width() >= 1100) {
+		var v = '<video id="video-element" preload="auto" autoplay="true" loop="loop">';
+		v += '<source src="{{ T_THEME_PATH }}/videos/heroes.mp4" type="video/mp4">';
+		v += '<source src="{{ T_THEME_PATH }}/videos/heroes.webm" type="video/webm">';
+		v += '</video>';
+		v += '<div id="video-border"></div>';
+
+		var $videoContainer = $('#video-container');
+		$videoContainer.html(v);
+		$videoContainer.find("video").on("canplaythrough", function() {
+			if ($(this).css("opacity") != 1) {
+				$(this).delay(100).fadeTo(4000,1);
+			}
+		});
+	} else {
+		$("#video-background").hide();
+	}
+});
+</script>

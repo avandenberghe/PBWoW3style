@@ -1,0 +1,322 @@
+{% INCLUDE 'overall_header.html' %}
+{% EVENT viewforum_forum_title_before %}
+<h2 class="forum-title">{% EVENT viewforum_forum_name_prepend %}<a href="{{ U_VIEW_FORUM }}">{{ FORUM_NAME }}</a>{% EVENT viewforum_forum_name_append %}</h2>
+{% EVENT viewforum_forum_title_after %}
+{% if FORUM_DESC or MODERATORS or U_MCP %}
+<div>
+	<!-- NOTE: remove the style="display: none" when you want to have the forum description on the forum body -->
+	{% if FORUM_DESC %}<div style="display: none !important;">{{ FORUM_DESC }}<br /></div>{% endif %}
+	{% if MODERATORS %}<p><strong>{% if S_SINGLE_MODERATOR %}{{ lang('MODERATOR') }}{% else %}{{ lang('MODERATORS') }}{% endif %}{{ lang('COLON') }}</strong> {{ MODERATORS }}</p>{% endif %}
+</div>
+{% endif %}
+
+{% if S_FORUM_RULES %}
+	<div class="rules{% if U_FORUM_RULES %} rules-link{% endif %}">
+		<div class="inner">
+
+		{% if U_FORUM_RULES %}
+			<a href="{{ U_FORUM_RULES }}">{{ lang('FORUM_RULES') }}</a>
+		{% else %}
+			<strong>{{ lang('FORUM_RULES') }}</strong><br />
+			{{ FORUM_RULES }}
+		{% endif %}
+
+		</div>
+	</div>
+{% endif %}
+
+{% if S_HAS_SUBFORUM %}
+{% if not S_IS_BOT and U_MARK_FORUMS %}
+	<div class="action-bar compact">
+		<a href="{{ U_MARK_FORUMS }}" class="mark-read rightside" data-ajax="mark_forums_read">{{ lang('MARK_SUBFORUMS_READ') }}</a>
+	</div>
+{% endif %}
+	{% INCLUDE 'forumlist_body.html' %}
+{% endif %}
+
+{% if S_DISPLAY_POST_INFO or loops.pagination|length or TOTAL_POSTS or TOTAL_TOPICS %}
+	<div class="action-bar bar-top">
+	{% if not S_IS_BOT and S_DISPLAY_POST_INFO %}
+		<div class="buttons">
+			{% EVENT viewforum_buttons_top_before %}
+
+		<a href="{{ U_POST_NEW_TOPIC }}" class="button" title="{% if S_IS_LOCKED %}{{ lang('FORUM_LOCKED') }}{% else %}{{ lang('POST_TOPIC') }}{% endif %}">
+			{% if S_IS_LOCKED %}
+				<span>{{ lang('BUTTON_FORUM_LOCKED') }}</span> <i class="icon fa-lock fa-fw" aria-hidden="true"></i>
+			{% else %}
+				<span>{{ lang('BUTTON_NEW_TOPIC') }}</span> <i class="icon fa-pencil fa-fw" aria-hidden="true"></i>
+			{% endif %}
+		</a>
+			{% EVENT viewforum_buttons_top_after %}
+		</div>
+	{% endif %}
+
+	{% if S_DISPLAY_SEARCHBOX %}
+		<div class="search-box" role="search">
+			<form method="get" id="forum-search" action="{{ S_SEARCHBOX_ACTION }}">
+			<fieldset>
+				<input class="inputbox search tiny" type="search" name="keywords" id="search_keywords" size="20" placeholder="{{ lang('SEARCH_FORUM') }}" />
+				<button class="button button-search" type="submit" title="{{ lang('SEARCH') }}">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">{{ lang('SEARCH') }}</span>
+				</button>
+				<a href="{{ U_SEARCH }}" class="button button-search-end" title="{{ lang('SEARCH_ADV') }}">
+					<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">{{ lang('SEARCH_ADV') }}</span>
+				</a>
+				{{ S_SEARCH_LOCAL_HIDDEN_FIELDS }}
+			</fieldset>
+			</form>
+		</div>
+	{% endif %}
+
+	<div class="pagination">
+		{% if not S_IS_BOT and U_MARK_TOPICS and loops.topicrow|length %}<a href="{{ U_MARK_TOPICS }}" class="mark" accesskey="m" data-ajax="mark_topics_read">{{ lang('MARK_TOPICS_READ') }}</a> &bull; {% endif %}
+		{{ TOTAL_TOPICS }}
+		{% if loops.pagination|length %}
+			{% INCLUDE 'pagination.html' %}
+		{% else %}
+			&bull; {{ PAGE_NUMBER }}
+		{% endif %}
+	</div>
+
+	</div>
+{% endif %}
+
+{% if S_NO_READ_ACCESS %}
+
+	<div class="panel">
+		<div class="inner">
+		<strong>{{ lang('NO_READ_ACCESS') }}</strong>
+		</div>
+	</div>
+
+	{% if not S_USER_LOGGED_IN and not S_IS_BOT %}
+
+		<form action="{{ S_LOGIN_ACTION }}" method="post">
+
+		<div class="panel">
+			<div class="inner">
+
+			<div class="content">
+				<h3><a href="{{ U_LOGIN_LOGOUT }}">{{ lang('LOGIN_LOGOUT') }}</a>{% if S_REGISTER_ENABLED %}&nbsp; &bull; &nbsp;<a href="{{ U_REGISTER }}">{{ lang('REGISTER') }}</a>{% endif %}</h3>
+
+				<fieldset class="fields1">
+				<dl>
+					<dt><label for="username">{{ lang('USERNAME') }}{{ lang('COLON') }}</label></dt>
+					<dd><input type="text" tabindex="1" name="username" id="username" size="25" value="{{ USERNAME }}" class="inputbox autowidth" /></dd>
+				</dl>
+				<dl>
+					<dt><label for="password">{{ lang('PASSWORD') }}{{ lang('COLON') }}</label></dt>
+					<dd><input type="password" tabindex="2" id="password" name="password" size="25" class="inputbox autowidth" autocomplete="off" /></dd>
+					{% if S_AUTOLOGIN_ENABLED %}<dd><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="3" /> {{ lang('LOG_ME_IN') }}</label></dd>{% endif %}
+					<dd><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="4" /> {{ lang('HIDE_ME') }}</label></dd>
+				</dl>
+				<dl>
+					<dt>&nbsp;</dt>
+					<dd><input type="submit" name="login" tabindex="5" value="{{ lang('LOGIN') }}" class="button1" /></dd>
+				</dl>
+				{{ S_LOGIN_REDIRECT }}
+				{{ S_FORM_TOKEN_LOGIN }}
+				</fieldset>
+			</div>
+
+			</div>
+		</div>
+
+		</form>
+
+	{% endif %}
+
+{% endif %}
+
+{% EVENT viewforum_body_topic_row_before %}
+
+{% for topicrow in loops.topicrow %}
+
+	{% if not topicrow.S_TOPIC_TYPE_SWITCH and not topicrow.S_FIRST_ROW %}
+		</ul>
+		</div>
+	</div>
+	{% endif %}
+
+	{% if topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH %}
+		<div class="forumbg{% if topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) %} announcement{% endif %}">
+		<div class="inner">
+		<ul class="topiclist">
+			<li class="header">
+				<dl class="row-item">
+					<dt{% if S_DISPLAY_ACTIVE %} id="active_topics"{% endif %}><div class="list-inner">{% if S_DISPLAY_ACTIVE %}{{ lang('ACTIVE_TOPICS') }}{% elseif topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) %}{{ lang('ANNOUNCEMENTS') }}{% else %}{{ lang('TOPICS') }}{% endif %}</div></dt>
+					<dd class="posts">{{ lang('REPLIES') }}</dd>
+					<dd class="views">{{ lang('VIEWS') }}</dd>
+					<dd class="lastpost"><span>{{ lang('LAST_POST') }}</span></dd>
+				</dl>
+			</li>
+		</ul>
+		<ul class="topiclist topics">
+	{% endif %}
+
+		{% EVENT viewforum_body_topicrow_row_before %}
+		<li class="row{% if topicrow.S_ROW_COUNT is even %} bg1{% else %} bg2{% endif %}{% if topicrow.S_POST_GLOBAL %} global-announce{% endif %}{% if topicrow.S_POST_ANNOUNCE %} announce{% endif %}{% if topicrow.S_POST_STICKY %} sticky{% endif %}{% if topicrow.S_TOPIC_REPORTED %} pbwow reported{% endif %}">
+			{% EVENT viewforum_body_topic_row_prepend %}
+			<dl class="row-item {{ topicrow.TOPIC_IMG_STYLE }}">
+				<dt{% if topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS %} style="background-image: url('{{ T_ICONS_PATH }}{{ topicrow.TOPIC_ICON_IMG }}'); background-repeat: no-repeat;"{% endif %} title="{{ topicrow.TOPIC_FOLDER_IMG_ALT }}">
+					{% if topicrow.S_UNREAD_TOPIC and not S_IS_BOT %}<a href="{{ topicrow.U_NEWEST_POST }}" class="row-item-link"></a>{% endif %}
+					<div class="list-inner">
+						{% EVENT topiclist_row_prepend %}
+						{% if topicrow.S_UNREAD_TOPIC and not S_IS_BOT %}
+							<a class="unread" href="{{ topicrow.U_NEWEST_POST }}">
+								<i class="icon fa-file fa-fw icon-red icon-md" aria-hidden="true"></i><span class="sr-only">{{ NEW_POST }}</span>
+							</a>
+						{% endif %}
+						{% if topicrow.U_VIEW_TOPIC %}<a href="{{ topicrow.U_VIEW_TOPIC }}" class="topictitle">{{ topicrow.TOPIC_TITLE }}</a>{% else %}{{ topicrow.TOPIC_TITLE }} {% endif %}
+
+						{% if topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED %}
+							<a href="{{ topicrow.U_MCP_QUEUE }}" title="{% if topicrow.S_TOPIC_UNAPPROVED %} {{ lang('TOPIC_UNAPPROVED') }}{% else %}{{ lang('POSTS_UNAPPROVED') }}{% endif %}">
+								<i class="icon fa-question fa-fw icon-blue" aria-hidden="true"></i><span class="sr-only">{% if topicrow.S_TOPIC_UNAPPROVED %} {{ lang('TOPIC_UNAPPROVED') }} {% else %} {{ lang ('POSTS_UNAPPROVED') }} {% endif %}</span>
+							</a>
+						{% endif %}
+						{% if topicrow.S_TOPIC_DELETED %}
+							<a href="{{ topicrow.U_MCP_QUEUE }}" title="{{ lang('TOPIC_DELETED') }}">
+								<i class="icon fa-recycle fa-fw icon-green" aria-hidden="true"></i><span class="sr-only">{{ lang('TOPIC_DELETED') }}</span>
+							</a>
+						{% endif %}
+						{% if topicrow.S_TOPIC_REPORTED %}
+							<a href="{{ topicrow.U_MCP_REPORT }}" title="{{ lang('TOPIC_REPORTED') }}">
+								<i class="icon fa-exclamation fa-fw icon-red" aria-hidden="true"></i><span class="sr-only">{{ lang('TOPIC_REPORTED') }}</span>
+							</a>
+						{% endif %}
+						<br />
+						{% EVENT topiclist_row_topic_title_after %}
+
+						{% if not S_IS_BOT %}
+						<div class="responsive-show" style="display: none;">
+							{{ lang('LAST_POST') }} {{ lang('POST_BY_AUTHOR') }} {% EVENT viewforum_body_last_post_author_username_prepend %}{{ topicrow.LAST_POST_AUTHOR_FULL }}{% EVENT viewforum_body_last_post_author_username_append %} &laquo; 
+							<a href="{{ topicrow.U_LAST_POST }}" title="{{ lang('GOTO_LAST_POST') }}">
+								<time datetime="{{ topicrow.LAST_POST_TIME_RFC3339 }}">{{ topicrow.LAST_POST_TIME }}</time></a>
+
+							{% if topicrow.S_POST_GLOBAL and FORUM_ID != topicrow.FORUM_ID %}<br />{{ lang('POSTED') }} {{ lang('IN') }} <a href="{{ topicrow.U_VIEW_FORUM }}">{{ topicrow.FORUM_NAME }}</a>{% endif %}
+						</div>
+						{% if topicrow.REPLIES %}
+						<span class="responsive-show left-box" style="display: none;">{{ lang('REPLIES') }}{{ lang('COLON') }} <strong>{{ topicrow.REPLIES }}</strong></span>
+						{% endif %}
+
+						{% endif %}
+
+						<div class="topic-poster responsive-hide left-box">
+							{% if topicrow.S_HAS_POLL %}<i class="icon fa-bar-chart fa-fw" aria-hidden="true"></i>{% endif %}
+							{% if topicrow.ATTACH_ICON_IMG %}<i class="icon fa-paperclip fa-fw" aria-hidden="true"></i>{% endif %}
+							{{ lang('POST_BY_AUTHOR') }} {% EVENT viewforum_body_topic_author_username_prepend %}{{ topicrow.TOPIC_AUTHOR_FULL }}{% EVENT viewforum_body_topic_author_username_append %} &raquo; 
+							<time datetime="{{ topicrow.FIRST_POST_TIME_RFC3339 }}"> {{ topicrow.FIRST_POST_TIME }}</time>
+							{% EVENT topiclist_row_topic_by_author_after %}
+							{% if topicrow.S_POST_GLOBAL and FORUM_ID != topicrow.FORUM_ID %} &raquo; {{ lang('IN') }} <a href="{{ topicrow.U_VIEW_FORUM }}">{{ topicrow.FORUM_NAME }}</a>{% endif %}
+						</div>
+
+						{% if topicrow.pagination|length %}
+						<div class="pagination">
+							<span><i class="icon fa-clone fa-fw" aria-hidden="true"></i></span>
+							<ul>
+							{% for pagination in topicrow.pagination %}
+								{% if pagination.S_IS_PREV %}
+								{% elseif pagination.S_IS_CURRENT %}<li class="active"><span>{{ pagination.PAGE_NUMBER }}</span></li>
+								{% elseif pagination.S_IS_ELLIPSIS %}<li class="ellipsis"><span>{{ lang('ELLIPSIS') }}</span></li>
+								{% elseif pagination.S_IS_NEXT %}
+								{% else %}<li><a class="button" href="{{ pagination.PAGE_URL }}">{{ pagination.PAGE_NUMBER }}</a></li>
+								{% endif %}
+							{% endfor %}
+							</ul>
+						</div>
+						{% endif %}
+
+						{% EVENT topiclist_row_append %}
+					</div>
+				</dt>
+				<dd class="posts">{{ topicrow.REPLIES }} <dfn>{{ lang('REPLIES') }}</dfn></dd>
+				<dd class="views">{{ topicrow.VIEWS }} <dfn>{{ lang('VIEWS') }}</dfn></dd>
+				<dd class="lastpost">
+					<span><dfn>{{ lang('LAST_POST') }} </dfn>{{ lang('POST_BY_AUTHOR') }} {% EVENT viewforum_body_last_post_author_username_prepend %}{{ topicrow.LAST_POST_AUTHOR_FULL }}{% EVENT viewforum_body_last_post_author_username_append %}
+						{% if not S_IS_BOT and topicrow.U_LAST_POST %}
+							<a href="{{ topicrow.U_LAST_POST }}" title="{{ lang('GOTO_LAST_POST') }}">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">{{ VIEW_LATEST_POST }}</span>
+							</a>
+						{% endif %}
+						<br /><time datetime="{{ topicrow.LAST_POST_TIME_RFC3339 }}">{{ topicrow.LAST_POST_TIME }}</time>
+					</span>
+				</dd>
+			</dl>
+			{% EVENT viewforum_body_topic_row_append %}
+		</li>
+		{% EVENT viewforum_body_topic_row_after %}
+
+	{% if topicrow.S_LAST_ROW %}
+			</ul>
+		</div>
+	</div>
+	{% endif %}
+{% else %}
+	{% if S_IS_POSTABLE %}
+	<div class="panel">
+		<div class="inner">
+		<strong>{{ lang('NO_TOPICS') }}</strong>
+		</div>
+	</div>
+	{% elseif not S_HAS_SUBFORUM %}
+	<div class="panel">
+			<div class="inner">
+				<strong>{{ lang('NO_FORUMS_IN_CATEGORY') }}</strong>
+			</div>
+		</div>
+	{% endif %}
+{% endfor %}
+
+{% if loops.topicrow|length and not S_DISPLAY_ACTIVE %}
+	<div class="action-bar bar-bottom">
+		{% if not S_IS_BOT and S_DISPLAY_POST_INFO %}
+		<div class="buttons">
+			{% EVENT viewforum_buttons_bottom_before %}
+
+			<a href="{{ U_POST_NEW_TOPIC }}" class="button" title="{% if S_IS_LOCKED %}{{ lang('FORUM_LOCKED') }}{% else %}{{ lang('POST_TOPIC') }}{% endif %}">
+			{% if S_IS_LOCKED %}
+				<span>{{ lang('BUTTON_FORUM_LOCKED') }}</span> <i class="icon fa-lock fa-fw" aria-hidden="true"></i>
+			{% else %}
+				<span>{{ lang('BUTTON_NEW_TOPIC') }}</span> <i class="icon fa-pencil fa-fw" aria-hidden="true"></i>
+			{% endif %}
+			</a>
+
+			{% EVENT viewforum_buttons_bottom_after %}
+		</div>
+		{% endif %}
+
+		{% if S_SELECT_SORT_DAYS and not S_IS_BOT %}
+			<form method="post" action="{{ S_FORUM_ACTION }}">
+			{% INCLUDE 'display_options.html' %}
+			</form>
+		{% endif %}
+
+		<div class="pagination">
+			{% if not S_IS_BOT and U_MARK_TOPICS and loops.topicrow|length %}<a href="{{ U_MARK_TOPICS }}" data-ajax="mark_topics_read">{{ lang('MARK_TOPICS_READ') }}</a> &bull; {% endif %}
+			{{ TOTAL_TOPICS }}
+			{% if loops.pagination|length %}
+				{% INCLUDE 'pagination.html' %}
+			{% else %}
+				 &bull; {{ PAGE_NUMBER }}
+			{% endif %}
+		</div>
+	</div>
+{% endif %}
+
+{% INCLUDE 'jumpbox.html' %}
+
+{% if S_DISPLAY_ONLINE_LIST and U_VIEWONLINE %}
+	<div class="stat-block online-list">
+		<h3><a href="{{ U_VIEWONLINE }}">{{ lang('WHO_IS_ONLINE') }}</a></h3>
+		<p>{{ LOGGED_IN_USER_LIST }}</p>
+	</div>
+{% endif %}
+
+{% if S_DISPLAY_POST_INFO %}
+	<div class="stat-block permissions">
+		<h3>{{ lang('FORUM_PERMISSIONS') }}</h3>
+		<p>{% for rules in loops.rules %}{{ rules.RULE }}<br />{% endfor %}</p>
+	</div>
+{% endif %}
+
+{% INCLUDE 'overall_footer.html' %}

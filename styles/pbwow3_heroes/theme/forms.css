@@ -1,0 +1,267 @@
+/* Form Styles
+---------------------------------------- */
+/* General form styles
+----------------------------------------*/
+select {
+    background-repeat: no-repeat;
+    background-position: 100% center;
+    -webkit-appearance: none; /* Removes default chrome and safari style */
+    -moz-appearance: none; /* Removes Default Firefox style */
+}
+
+/* Definition list layout for forms
+---------------------------------------- */
+fieldset.display-options.right-box { text-align: right; }
+
+fieldset.submit-buttons input {
+    padding: 8px 10px;
+    font-size: 1.2em;
+}
+
+/* Sort & Display options */
+.dropdown fieldset.display-options {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown fieldset.display-options label {
+    display: block;
+    margin: 4px;
+    padding: 0;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.dropdown fieldset.display-options select {
+    min-width: 120px;
+}
+
+/* Posting page styles
+----------------------------------------*/
+
+/* Input field styles
+---------------------------------------- */
+
+input.disabled {
+    font-weight: normal;
+    color: #999;
+}
+
+/* Form button styles
+---------------------------------------- */
+
+a.button1,
+a.button2 {
+    padding: 2px 8px;
+}
+
+/* Form buttons */
+a.button1, input.button1,
+a.button2, input.button2, input.button3 {
+    padding: 3px 4px;
+    border: 1px solid;
+    border-radius: 0;
+    width: auto !important;
+    min-width: 20px;
+    line-height: 1.5;
+    margin-top: 4px;
+    border-radius: 0;
+    font-family: "exo", "Myriad Pro", Myriad, Arial, sans-serif;
+    font-size: 1.1em;
+    transition: none;
+}
+
+input.button1:active, input.button3:active, input.button2:active {
+    text-decoration: none;
+}
+
+.button1.disabled {
+    font-weight: normal;
+}
+
+#login .button1,
+#quick-login-panel .button1 {
+    padding: 5px 14px;
+}
+
+/* Browser-specific tweaks */
+input.button1::-moz-focus-inner,
+input.button2::-moz-focus-inner,
+input.button3::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a.button1:link, a.button1:visited, a.button1:active,
+a.button2:link, a.button2:visited, a.button2:active {
+    color: #DDD;
+    padding: 2px 8px;
+}
+
+/* <a> button in the style of the form buttons */
+
+/* Hover states */
+
+/* Focus states */
+
+/* Topic and forum Search */
+
+/* Search box (header)
+--------------------------------------------- */
+.search-box .inputbox,
+.search-box button.search-icon {
+    height: auto;
+    padding: 0 3px;
+    margin: 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.search-box .inputbox {
+    background-image: none;
+    border-right-width: 0;
+    border-radius: 0px;
+    float: left;
+    padding: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 28px;
+    height: 30px;
+}
+
+
+.search .postbody {
+    width: 76.5%;
+}
+
+.search .postprofile {
+    background: none !important;
+    width: 23.5%;
+    padding: 5px;
+    min-height: inherit;
+}
+
+.search .postprofile dt {
+    background: none !important;
+    min-height: inherit;
+    padding-top: 0;
+}
+
+body.section-search p:not(.jumpbox-return) a.arrow-left,
+body.section-search p:not(.jumpbox-return) a.arrow-right {
+    display: none;
+}
+
+
+.search-box button.search-icon,
+.search-box a.button {
+    padding: 0 7px;
+}
+
+.search-box a.button {
+    border-radius: 0;
+}
+
+input[type=checkbox][disabled] {
+    opacity: 0.7;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    select {
+        padding-right: 10px;
+    }
+}
+
+#format-buttons { margin: 15px 0 5px 0; }
+
+input.search {
+    background-image: none;
+    padding: 2px;
+}
+
+/* Search box (header)
+--------------------------------------------- */
+.search-header {
+    border-radius: 0;
+    float: none;
+    text-align: left;
+    margin: 0;
+    background: #000;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #271B41;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    left: auto;
+    bottom: 30px;
+    width: 335px;
+    z-index: 1;
+}
+
+.search-header:before {
+    display: none;
+}
+
+.search-header a.button {
+    background: url("./en/forum-menu-advanced-search.gif") no-repeat 0 0;
+    border: none;
+    height: 17px;
+    width: 107px;
+    padding: 0;
+    position: absolute;
+    left: 94px;
+    top: -6px;
+    font-size: 0;
+    box-shadow: none;
+    transition: none;
+    display: none; /* TODO: find elegant solutions **** */
+}
+
+.search-header a.button:hover {
+    background-position: 0 100%;
+}
+
+.search-header button.search-icon {
+    border-radius: 0;
+    padding: 0;
+    font-size: 0;
+    box-shadow: none;
+    background: url("./images/magnifying-glass.png") no-repeat;
+    border: medium none;
+    cursor: pointer;
+    height: 40px;
+    position: absolute;
+    right: 2px;
+    top: 0;
+    width: 40px !important;
+}
+
+
+.search-header button.search-icon:after,
+.search-header a.button:after {
+    display: none;
+}
+
+.search-header input {
+    vertical-align: inherit;
+}
+
+.search-header .inputbox {
+    line-height: 15px;
+    background: none;
+    border: none;
+    border-radius: 0;
+    color: #FFF;
+    font-size: 13px;
+    margin: 0;
+    padding: 12px 0 12px 12px;
+    height: 40px;
+    width: 295px;
+}
+
+.search-header .inputbox:focus {
+    border: none;
+}
+
