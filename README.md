@@ -2,14 +2,12 @@
 
 Author @Paybas, @Sajaki
 
-Updated by @Galixte
-
 ## requirements
 - phpBB 3.3.x
 - pbwowExt (optional)
 
 ## Support
-- http://www.avathar.be/forum/viewforum.php?f=82
+- https://www.avathar.be/forum/viewforum.php?f=82
 
 ## Changes
 3.3.0 (13-07-2020)
