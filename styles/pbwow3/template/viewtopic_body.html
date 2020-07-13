@@ -149,11 +149,13 @@
 					{% if postrow.POSTER_AVATAR %}
 						{% if postrow.U_POST_AUTHOR %}<a href="{{ postrow.U_POST_AUTHOR }}" class="avatar">{{ postrow.POSTER_AVATAR }}</a>{% else %}<span class="avatar">{{ postrow.POSTER_AVATAR }}</span>{% endif %}
 					{% endif %}
-				{% if S_PBWOW_SMALL_RANKS and (postrow.RANK_TITLE or postrow.RANK_IMG) %}
+
+				{% if S_PBWOW_SMALL_RANKS %}
 				<div class="rank-icon">
 					 {{ postrow.RANK_IMG }}
 				</div>
 				{% endif %}
+
 				{% EVENT viewtopic_body_avatar_after %}
 				</div>
 				{% EVENT viewtopic_body_post_author_before %}
@@ -335,6 +337,7 @@
 			{% EVENT viewtopic_body_postrow_post_details_after %}
 
 			{% if postrow.S_POST_UNAPPROVED %}
+			{% if postrow.S_CAN_APPROVE %}
 			<form method="post" class="mcp_approve" action="{{ postrow.U_APPROVE_ACTION }}">
 				<p class="post-notice unapproved">
 					<span><i class="icon fa-question icon-red fa-fw" aria-hidden="true"></i></span>
@@ -345,6 +348,12 @@
 					{{ S_FORM_TOKEN }}
 				</p>
 			</form>
+			{% else %}
+				<p class="post-notice unapproved">
+					<span><i class="icon fa-exclamation icon-red fa-fw" aria-hidden="true"></i></span>
+					<strong>{L_POST_UNAPPROVED_EXPLAIN}</strong>
+				</p>
+			{% endif %}
 			{% elseif postrow.S_POST_DELETED %}
 			<form method="post" class="mcp_approve" action="{{ postrow.U_APPROVE_ACTION }}">
 				<p class="post-notice deleted">
