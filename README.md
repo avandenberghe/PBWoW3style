@@ -12,7 +12,7 @@ Updated by @Galixte
 - http://www.avathar.be/forum/viewforum.php?f=82
 
 ## Changes
-3.3.10 (13-07-2020)
+3.3.0 (13-07-2020)
 - support for phpBB 3.3
 
 3.2.10 (07-07-2020)
