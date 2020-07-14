@@ -4,12 +4,15 @@
 Author @Paybas, @Sajaki
 
 ## requirements
-- pbWow 3.2.10 Base style 
+- pbWow 3.3.0 Base style 
 
 ## Support
 - https://www.avathar.be/forum/viewforum.php?f=82
 
 ## Changes
+3.3.0 (07-07-2020)
+- updated for phpBB 3.3.0
+
 3.2.10 (11-07-2020)
 - support for S_PBWOW_SMALL_RANKS
 
