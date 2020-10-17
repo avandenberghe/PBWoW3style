@@ -317,13 +317,9 @@ dd.option {
     color: #CCC;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7);
     line-height: 18px;
-    width: 76.5%;
-}
-
-.postbody {
 	padding: 0;
-	line-height: 1.48em;
-	width: 76%;
+	line-height: 1.38em;
+	width: 75%;
 	float: left;
 	position: relative;
 }
@@ -392,7 +388,7 @@ dd.option {
 }
 
 .search .postbody {
-	width: 68%
+    width: 68%;
 }
 
 /* Topic review panel
@@ -597,7 +593,7 @@ blockquote cite:before, .uncited:before {
  	padding-right: 5px;
 }
 
-blockquote cite > div {
+blockquote cite > span {
 	float: right;
 	font-weight: normal;
 }

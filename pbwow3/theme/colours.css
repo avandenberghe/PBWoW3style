@@ -168,6 +168,7 @@ h3 a:hover { text-decoration: none; }
     color: #E1C492;
 }
 
+.post h3 a.first-unread,
 .post:target h3 a {
     color: #FFF;
 }
