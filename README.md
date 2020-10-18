@@ -14,6 +14,9 @@ Author @Paybas, @Sajaki
 3.3.1 (17-10-2020)
 - updated for phpBB 3.3.1
 
+3.3.0 (07-07-2020)
+- updated for phpBB 3.3.0
+
 3.2.10 (07-07-2020)
 - support for S_PBWOW_SMALL_RANKS
 
