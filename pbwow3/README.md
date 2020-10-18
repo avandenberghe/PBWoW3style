@@ -1,17 +1,19 @@
-## PBWoW 3 Style for phpBB 3.3
+## PBWoW 3 Style for phpBB 3.3.1
 
 Author @Paybas, @Sajaki
 
 ## requirements
-- phpBB 3.2 / 3.3
+- phpBB 3.3
 - pbwowExt (optional)
 
 ## Support
 - http://www.avathar.be/forum/viewforum.php?f=82
 - https://www.phpbb.com/customise/db/style/pbwow3/support
-- http://www.ezcom-fr.com/viewtopic.php?f=13&t=74 (in French)
 
 ## Changes
+3.3.1 (17-10-2020)
+- updated for phpBB 3.3.1
+
 3.3.0 (07-07-2020)
 - updated for phpBB 3.3.0
 
