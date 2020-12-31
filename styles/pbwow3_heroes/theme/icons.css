@@ -1,0 +1,23 @@
+/* --------------------------------------------------------------
+	$Icons
+-------------------------------------------------------------- */
+
+/* Global module setup
+--------------------------------*/
+
+.icon:before {
+	margin-right: 2px;
+	margin-left: 2px;
+}
+
+blockquote cite:before, .uncited:before {
+	content: none;
+}
+
+.rtl blockquote cite:before, .rtl .uncited:before {
+	content: none;
+}
+
+.arrow-left .icon, .arrow-right .icon, .top i {
+	display: none;
+}

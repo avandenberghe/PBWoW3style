@@ -9,7 +9,7 @@ Updated by @Galixte
 - pbwowExt (optional)
 
 ## Support
-- http://www.avathar.be/bbdkp/viewforum.php?f=82
+- http://www.avathar.be/forum/viewforum.php?f=82
 - https://www.phpbb.com/customise/db/style/pbwow3/support
 - http://www.ezcom-fr.com/viewtopic.php?f=13&t=74 (in French)
 

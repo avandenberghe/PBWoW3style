@@ -1,0 +1,296 @@
+/* RTL definitions pbwow 3.2
+---------------------------------------- */
+
+.rtl #page-body:before {
+	margin-right: -20px; /* compensate for the padding */
+}
+
+/* Main blocks
+---------------------------------------- */
+.rtl .navigation a {
+	border: #222;
+	color: #999;
+	background: #212121;
+	background: rgba(40,40,40,0.7) linear-gradient(to left, rgba(0,0,0,0.6) 0,rgba(0,0,0,0) 100px);
+}
+
+.rtl .index-left {
+	margin-left: 312px;
+	margin-right: 0;
+}
+
+.rtl .index-right {
+	float: left;
+}
+
+.rtl .forum-blocks dl {
+	background-position: 0 1px, 100% 1px, 0 0, 0 0;
+}
+
+.rtl .forum-blocks dl a.icon-link {
+	left: auto;
+	right: 10px;
+}
+
+.rtl .forum-blocks dl .list-inner {
+	padding: 0;
+	margin-left: 0;
+	margin-right: 47px;
+}
+
+.rtl .forums .dropdown-container {
+	clear: right;
+	float: right;
+}
+
+.rtl .forum-blocks dd.forum-stats,
+.rtl .forum-blocks dd.redirect,
+.rtl .forum-blocks dd.mcp-status,
+.rtl #recent-topics dd.lastpost {
+	left: 0;
+	right: auto;
+}
+
+.stat-block .online-pagelink {
+	right: auto;
+	left: 3px;
+}
+
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+	.rtl .index-left {
+		margin-left: 0;
+	}
+
+	.rtl .index-right {
+		float: none;
+	}
+}
+
+.rtl ul.topiclist dd {
+	border: none;
+}
+
+.rtl dl.icon dt .list-inner {
+	padding-left: 0;
+}
+
+/* Responsive breadcrumbs
+----------------------------------------*/
+#body-header li.breadcrumbs {
+	padding-left: 0;
+	padding-right: 15px;
+}
+
+#body-header li.breadcrumbs:before,
+#page-footer li.breadcrumbs:before {
+	left: auto;
+	right: 0;
+}
+
+/* Pagination
+---------------------------------------- */
+.rtl .pagination li.next a:after {
+	content: '\f053';
+	padding-left: 0px;
+	padding-right: 1px;
+}
+
+.rtl .pagination li.previous a:after {
+	content: '\f054';
+	padding-right: 0px;
+	padding-left: 1px;
+}
+
+
+/* Post poll styles
+----------------------------------------*/
+.rtl fieldset.polls dt {
+	text-align: left;
+}
+
+.rtl .topic_poll p.author {
+	left: 20px;
+	right: auto;
+}
+/* Posting page styles
+----------------------------------------*/
+.rtl .postbody,
+.rtl .postbody h3 {
+	float: right;
+}
+
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+	.rtl .postbody {
+		float: none;
+	}
+}
+
+.rtl .post .postbody h3,
+.rtl .post p.author {
+	margin-right: 10px;
+}
+
+/* Post profiles
+--------------------------------------------- */
+.rtl .postprofile {
+	float: right;
+	border: none;
+}
+
+.rtl .postprofile dd, .rtl .postprofile dt {
+	margin-right: 0;
+}
+
+.rtl .postprofile .avatar {
+	float: none;
+}
+
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+	.rtl .postprofile .avatar {
+		float: right;
+	}
+}
+
+.rtl .has-profile .postbody {
+	background-position: 100% 0;
+}
+
+
+/* Search box
+---------------------------------------- */
+.rtl .search-header {
+	float: none;
+	margin-left: 0;
+	right: auto;
+	left: 0;
+}
+
+.rtl .search-header .inputbox {
+	padding: 12px 12px 12px 0 !important;
+	float: right !important;
+}
+
+.rtl .search-header button.search-icon {
+	float: left;
+	right: auto;
+	left: 2px;
+}
+
+
+/* Form button styles
+---------------------------------------- */
+.rtl .icon-button.dropdown-select {
+	padding-left: 5px;
+}
+
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+	.rtl .has-profile .post-buttons {
+		left: 5px;
+	}
+}
+/* Collapseable blocks
+--------------------------------------------- */
+.rtl .collapse-box h2,
+.rtl .stat-block h3 {
+	padding-left: 0;
+	padding-right: 8px;
+}
+
+.rtl .collapse-box h2 a[href="#"]:before,
+.rtl .stat-block h3 a[href="#"]:before {
+	margin-left: 8px;
+	margin-right: 0;
+}
+/* Drop-down menus
+--------------------------------------------- */
+.rtl .dropdown li {
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+
+.rtl .dropdown li.separator {
+	padding: 0;
+}
+
+.rtl .forums .dropdown-contents a {
+	padding-left: 6px;
+	padding-right: 15px;
+}
+
+.rtl .forums .dropdown-contents a.subforum.read,
+.rtl .forums .dropdown-contents a.subforum.unread {
+	background-position: 100% 50%;
+}
+
+/* Profile Context Menu */
+.rtl .profile-context .dropdown {
+	padding: 0;
+	left: auto;
+	right: 18%;
+	top: 15px;
+	margin-right: 0 !important;
+}
+
+.rtl .profile-context .dropdown-contents {
+	text-align: right;
+}
+
+.rtl .profile-context .user-icons a {
+	float: right;
+}
+
+.rtl .profile-context .user-icons a:first-child {
+	border-radius: 0 3px 3px 0;
+}
+
+.rtl .profile-context .user-icons a:last-child {
+	border-radius: 3px 0 0 3px;
+}
+
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+	.rtl .profile-context .dropdown {
+		right: 0;
+		top: 50px;
+	}
+}
+
+/* Sort & Display options
+@ TODO: this is temporary
+--------------------------------------------- */
+.rtl .dropdown fieldset.display-options label {
+	text-align: left;
+}
+
+/* Icon images
+--------------------------------------------- */
+.rtl .small-icon {
+	padding: 0;
+}
+
+.rtl .small-icon > a:before,
+.rtl #top-bar .small-icon:before,
+.rtl .profile-context .user-icons a:before {
+	padding-left: 4px;
+	padding-right: 0;
+}
+
+/* Tweaks
+--------------------------------------------- */
+.rtl ul.linklist li {
+	margin-left: 10px;
+}
+
+.rtl ul.linklist > li.rightside {
+	margin-right: 10px;
+}
+
+.rtl select {
+	background-position: 0 center;
+}
+
+/* Extensions
+--------------------------------------------- */
+.rtl #recent-topics li.row dl {
+	padding-left: 5px;
+	padding-right: 0;
+}
