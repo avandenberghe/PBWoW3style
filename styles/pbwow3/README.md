@@ -1,4 +1,4 @@
-## PBWoW 3 Style for phpBB 3.2.8
+## PBWoW 3 Style for phpBB 3.2.10
 
 Author @Paybas, @Sajaki
 
@@ -14,6 +14,9 @@ Updated by @Galixte
 - http://www.ezcom-fr.com/viewtopic.php?f=13&t=74 (in French)
 
 ## Changes
+3.2.11 (29-05-2021)
+- updated for phpBB 3.2.10
+
 3.2.10 (07-07-2020)
 - support for S_PBWOW_SMALL_RANKS
 
