@@ -298,7 +298,7 @@
 {% endif %}
 
 {% INCLUDE 'jumpbox.html' %}
-
+{% EVENT viewforum_body_online_list_before %}
 {% if S_DISPLAY_ONLINE_LIST and U_VIEWONLINE %}
 	<div class="stat-block online-list">
 		<h3><a href="{{ U_VIEWONLINE }}">{{ lang('WHO_IS_ONLINE') }}</a></h3>
@@ -306,7 +306,7 @@
 	</div>
 {% endif %}
 
-{% if S_DISPLAY_POST_INFO %}
+{% if S_IS_POSTABLE and rules|length %}
 	<div class="stat-block permissions">
 		<h3>{{ lang('FORUM_PERMISSIONS') }}</h3>
 		<p>{% for rules in loops.rules %}{{ rules.RULE }}<br />{% endfor %}</p>
