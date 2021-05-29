@@ -68,6 +68,7 @@
 					<dd class="posts">{{ lang('REPLIES') }}</dd>
 					<dd class="views">{{ lang('VIEWS') }}</dd>
 					<dd class="lastpost"><span>{{ lang('LAST_POST') }}</span></dd>
+					{% EVENT search_results_topic_header_lastpost_after %}
 				</dl>
 			</li>
 		</ul>
@@ -152,6 +153,7 @@
 							<br /><time datetime="{{ searchresults.LAST_POST_TIME_RFC3339 }}">{{ searchresults.LAST_POST_TIME }}</time>
 						</span>
 					</dd>
+					{% EVENT search_results_topic_row_lastpost_after %}
 				</dl>
 			</li>
 			{% EVENT search_results_topic_after %}
@@ -193,6 +195,7 @@
 		</dl>
 
 		<div class="postbody">
+			{% EVENT search_results_post_subject_before %}
 			<h3><a href="{{ searchresults.U_VIEW_POST }}">{{ searchresults.POST_SUBJECT }}</a></h3>
 			<div class="content">{{ searchresults.MESSAGE }}</div>
 			{% EVENT search_results_content_after %}
@@ -237,7 +240,7 @@
 		{% endif %}
 	</div>
 </div>
-
+{% EVENT search_results_jumpbox_before %}
 {% INCLUDE 'jumpbox.html' %}
 
 {% INCLUDE 'overall_footer.html' %}

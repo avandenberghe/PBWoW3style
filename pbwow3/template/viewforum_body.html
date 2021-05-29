@@ -251,7 +251,7 @@
 	{% if S_IS_POSTABLE %}
 	<div class="panel">
 		<div class="inner">
-		<strong>{{ lang('NO_TOPICS') }}</strong>
+			<strong>{{ lang(S_SORT_DAYS ? 'NO_TOPICS_TIME_FRAME' : 'NO_TOPICS') }}</strong>
 		</div>
 	</div>
 	{% elseif not S_HAS_SUBFORUM %}
