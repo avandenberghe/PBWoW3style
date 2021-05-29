@@ -92,3 +92,11 @@ a.arrow-up, a.arrow-down, a.arrow-left, a.arrow-right {
 .icon-mark-read > a:before {
     content: "\f046";
 }
+
+
+.row-item .topictitle:hover,
+.row-item .subforum:hover,
+.row-item .username:hover,
+.row-item .username-coloured:hover {
+    text-decoration: none;
+}
