@@ -880,13 +880,10 @@ Colours and backgrounds for buttons.css
     background-color: #222;
     background-image: linear-gradient(to bottom, #373737 0%, #111 100%);
     filter: none;
-    border: 1px solid #161616;
-    color: #CCC;
-    text-shadow: -2px 2px 3px #44030e;
-    box-shadow: inset 1px 1px 1px 1px #494949;
-    -webkit-box-shadow: inset 1px 1px 1px 1px #494949;
-    -moz-box-shadow: inset 1px 1px 1px 1px #494949;
-    -o-box-shadow: inset 1px 1px 1px 1px #494949;
+    border: 1px solid #5D5D5D;
+    color: #FFAE00;
+    text-shadow: 1px 1px 2px rgb(0 0 0 / 80%);
+    box-shadow: 0 1px 7px 0 rgb(0 0 0 / 60%), inset 0 0 3px 0 rgb(0 0 0 / 80%);
 }
 
 .button:hover,
@@ -896,23 +893,20 @@ Colours and backgrounds for buttons.css
     filter: none;
     border: 1px solid #FFB019;
     color: #FFB019;
-    text-shadow: -2px 2px 3px #44030e;
-    box-shadow: inset 1px 1px 1px 1px #770B08;
-    -webkit-box-shadow: inset  1px 1px 1px 1px #770B08;
-    -moz-box-shadow: inset 1px 1px 1px 1px #770B08;
-    -o-box-shadow: inset       1px 1px 1px 1px #770B08;
+    text-shadow: 1px 1px 2px rgb(0 0 0 / 80%);
+    box-shadow: 0 1px 7px 0 rgb(0 0 0 / 60%), inset 0 0 3px 0 rgb(0 0 0 / 80%);
 }
 
 .button .icon,
 .button-secondary {
-	color: #8f8f8f;
+	color: #FFAE00;
 }
 
 .button-secondary:focus,
 .button-secondary:hover,
 .button:focus .icon,
 .button:hover .icon {
-	color: #FFFFFF;
+	color: #FFB019;
 }
 
 .button-search:hover,
