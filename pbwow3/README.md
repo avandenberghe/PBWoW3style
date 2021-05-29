@@ -1,9 +1,9 @@
-## PBWoW 3 Style for phpBB 3.3.1
+## PBWoW 3 Style for phpBB 3.3.4
 
 Author @Paybas, @Sajaki
 
 ## requirements
-- phpBB 3.3
+- phpBB 3.3.1 or higher
 - pbwowExt (optional)
 
 ## Support
@@ -11,11 +11,17 @@ Author @Paybas, @Sajaki
 - https://www.phpbb.com/customise/db/style/pbwow3/support
 
 ## Changes
+3.3.2 (29-05-2021)
+- updated for phpBB 3.3.4
+
 3.3.1 (17-10-2020)
 - updated for phpBB 3.3.1
 
 3.3.0 (07-07-2020)
 - updated for phpBB 3.3.0
+
+3.2.11 (29-05-2021)
+- updated for phpBB 3.2.10
 
 3.2.10 (07-07-2020)
 - support for S_PBWOW_SMALL_RANKS
