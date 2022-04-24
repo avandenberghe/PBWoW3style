@@ -5,8 +5,8 @@
 	Original author:	PayBas ( http://pbwow.com/ )
     --------------------------------------------------------------
 */
-@import url("common.css?v=3.2");
-@import url("colours.css?v=3.2");
+@import url("common.css?hash=a9741ba1");
+@import url("colours.css?hash=fcb2f289");
 
 .site-description {
 	float: right;

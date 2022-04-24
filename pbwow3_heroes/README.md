@@ -10,6 +10,9 @@ Author @Paybas, @Sajaki
 - https://www.avathar.be/forum/viewforum.php?f=82
 
 ## Changes
+3.3.5 (24-04-2022)
+- updated for phpBB 3.3.5
+
 3.3.0 (07-07-2020)
 - updated for phpBB 3.3.0
 

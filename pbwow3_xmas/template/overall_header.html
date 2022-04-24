@@ -24,11 +24,11 @@
 
 <!--
 	phpBB style name: PBWoW3 Wotlk
-	version 3.1
-	designed for phpBB 3.2.1
+	version 3.3.5
+	designed for phpBB 3.3.5
 	Based on style:   pbWoW3
 	Original author:  paybas (http://www.pbwow.com)
-	Modified by Sajaki (http://www.avathar.be)
+	Modified by Sajaki (https://www.avathar.be)
 -->
 
 {% if S_ALLOW_CDN %}
@@ -41,7 +41,7 @@
 
 	(function(d) {
 		var wf = d.createElement('script'), s = d.scripts[0];
-		wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+		wf.src = 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js'
 		wf.async = true;
 		s.parentNode.insertBefore(wf, s);
 	})(document);
@@ -105,9 +105,7 @@
 				<fieldset>
 					<input name="keywords" id="keywords" type="search" maxlength="128" title="{{ lang('SEARCH_KEYWORDS') }}" class="inputbox search tiny" size="20" value="{{ SEARCH_WORDS }}" placeholder="{{ lang('SEARCH_MINI') }}" />
 					<button class="button icon-button search-icon" type="submit" title="{{ lang('SEARCH') }}"></button>
-					<a href="{{ U_SEARCH }}" class="button icon-button search-adv-icon" title="{{ lang('SEARCH_ADV') }}">
-						<!-- <i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">{{ lang('SEARCH_ADV') }}</span> -->
-					</a>
+					<a href="{{ U_SEARCH }}" class="button icon-button search-adv-icon" title="{{ lang('SEARCH_ADV') }}"></a>
 					{{ S_SEARCH_HIDDEN_FIELDS }}
 				</fieldset>
 				</form>
@@ -134,5 +132,4 @@
 			</div>
 		</div>
 		{% endif %}
-
 		{% EVENT overall_header_content_before %}
