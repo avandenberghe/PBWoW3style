@@ -1,4 +1,4 @@
-## PBWoW 3 Style for phpBB 3.3.4
+## PBWoW 3 Style for phpBB 3.3.5
 
 Author @Paybas, @Sajaki
 
@@ -11,6 +11,9 @@ Author @Paybas, @Sajaki
 - https://www.phpbb.com/customise/db/style/pbwow3/support
 
 ## Changes
+3.3.5 (24-04-2022)
+- updated for phpBB 3.3.5
+
 3.3.2 (29-05-2021)
 - updated for phpBB 3.3.4
 
