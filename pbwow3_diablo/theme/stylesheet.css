@@ -1,0 +1,136 @@
+/*  phpBB3 Style Sheet
+    --------------------------------------------------------------
+	Style name:			PBWoW 3 Diablo
+	Based on style:		PBWoW 3
+	Original author:	PayBas ( http://pbwow.com/ )
+    --------------------------------------------------------------
+*/
+
+@import url("common.css?hash=a9741ba1");
+@import url("links.css?hash=cbeb92cc");
+@import url("forms.css?hash=b64464fb");
+@import url("content.css?hash=56f9e623");
+@import url("colours.css?hash=fcb2f289");
+@import url("extensions.css?hash=07db3f81");
+
+body.pbwow3 .logo {
+	background: url("./images/logo.png") no-repeat 50% 0;
+	background-size: 100% 100%;
+	width: 310px;
+	height: 241px;
+	margin: -15px 0 0 -10px;
+	display: block;
+}
+
+
+/* Quick-reply
+--------------------------------------------- */
+#qr_postform .panel {
+	position: relative;
+	margin-bottom: 20px;
+}
+#qr_postform .panel:before,
+#qr_postform .panel:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+}
+#qr_postform .panel:before {
+	background: url("./images/deco.png") 50% 0 no-repeat;
+	height: 45px;
+	bottom: -24px;
+}
+#qr_postform .panel:after {
+	background: url("./images/skull.png") 50% 0 no-repeat;
+	height: 90px;
+	bottom: -54px;
+}
+#qr_postform .panel:hover:after {
+	background-position: 50% -100px;
+}
+
+/* Drop-down menus
+--------------------------------------------- */
+.profile-context .user-icons a {
+	background-image: url("./images/context.gif");
+}
+
+
+/* Top-bar (custom)
+--------------------------------------------- */
+#top-bar a {
+	color: #BEDDDD;
+}
+#top-bar a:hover, #top-bar a:active {
+	color: #FFF;
+}
+
+
+/* Miscellaneous styles
+--------------------------------------------- */
+#container .boardrules-header {
+	font-family: "Exocet Blizzard Light","Palatino Linotype",Times,serif;
+}
+
+#phpbb_announcement:hover {
+	border-color: #999;
+}
+
+#video-container {
+	background: url("./videos/malthael.jpg") no-repeat 49.999% 0;
+	height: 822px;
+	width: 2000px;
+}
+
+#video-border {
+	background: url("./images/section-border.png") repeat-x 0 0;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.5);
+	top: 820px;
+	height: 17px;
+}
+
+
+/* =Media queries
+-------------------------------------------------------------- */
+@media screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+	#page-body {
+		background: url("./images/border-bot.gif") repeat-x 0 100%,
+					url("./images/border-top.gif") repeat-x 0 0,
+					rgba(0,0,0,0.85) !important;
+	}
+
+	.navbar ul.linklist {
+		padding: 6px 10px !important;
+	}
+}
+
+@media screen and (max-width: 859px), only screen and (max-device-width: 859px) {
+	#logo {
+		width: 248px;
+		height: 192px;
+	}
+}
+
+@media screen and (max-width: 999px), only screen and (max-device-width: 999px) {
+	body {
+		background-image: url("./images/bg-small.jpg");
+		background-position: 50% -10px;
+	}
+	.navbar:before, .navbar:after {
+		width: 12px;
+		margin: 0;
+	}
+}
+
+@media screen and (min-width: 1000px), only screen and (max-device-width: 1000px) {
+	#wrapper {
+		min-height: 850px;
+	}
+}
+
+
+/* copyright
+-------------------------------------------------------------- */
+.copyright {
+	z-index: 1;
+}
