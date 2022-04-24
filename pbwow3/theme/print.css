@@ -127,7 +127,7 @@ html>body .postbody h1 a:link:after, html>body .postbody h2 a:link:after {
 
 /* List */
 ol, ul {
-	margin-left: 15pt
+	margin-left: 15pt;
 }
 
 /* Misc page elements */

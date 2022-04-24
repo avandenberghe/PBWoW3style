@@ -688,8 +688,7 @@ blockquote .codebox {
 	clear: left;
 }
 
-.attachbox p.stats
-{
+.attachbox p.stats {
 	line-height: 110%;
 	font-weight: normal;
 	clear: left;
@@ -702,7 +701,6 @@ blockquote .codebox {
 
 .attach-image img {
 	border: 1px solid transparent;
-	/*	cursor: move; */
 	cursor: default;
 }
 

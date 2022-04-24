@@ -93,10 +93,11 @@ a.arrow-up, a.arrow-down, a.arrow-left, a.arrow-right {
     content: "\f046";
 }
 
-
+.row-item .forumtitle:hover,
 .row-item .topictitle:hover,
+.row-item .lastsubject:hover,
 .row-item .subforum:hover,
-.row-item .username:hover,
-.row-item .username-coloured:hover {
+.row-item a.username:hover,
+.row-item a.username-coloured:hover {
     text-decoration: none;
 }
