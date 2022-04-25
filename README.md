@@ -13,6 +13,7 @@ Author @Paybas, @Sajaki
 ## Changes
 3.3.5 (24-04-2022)
 - updated for phpBB 3.3.5
+- added pbwow3_diablo
 
 3.3.2 (29-05-2021)
 - updated for phpBB 3.3.4
