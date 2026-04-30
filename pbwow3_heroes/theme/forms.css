@@ -132,15 +132,32 @@ a.button2:link, a.button2:visited, a.button2:active {
 }
 
 
-.search .postbody {
-    width: 76.5%;
+.search.post > .inner {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
 }
 
 .search .postprofile {
     background: none !important;
-    width: 23.5%;
+    flex: 0 0 23.5%;
     padding: 5px;
     min-height: inherit;
+    text-align: left;
+    box-sizing: border-box;
+    float: none;
+}
+
+.search .postbody {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    float: none;
+}
+
+.search.post > .inner > ul.searchresults {
+    flex: 1 0 100%;
+    order: 99;
 }
 
 .search .postprofile dt {
