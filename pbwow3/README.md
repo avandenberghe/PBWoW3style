@@ -1,4 +1,4 @@
-## PBWoW 3.3.17 Style for phpBB 3.3.15
+## PBWoW 3 Style for phpBB 3.3.15
 
 Author @Paybas, @Sajaki
 
@@ -11,6 +11,13 @@ Author @Paybas, @Sajaki
 - https://www.phpbb.com/customise/db/style/pbwow3/support
 
 ## Changes
+3.3.18 (30-04-2026)
+- fix: search results no longer stack — switched `.search.post > .inner` to flex layout so postprofile (23.5%) and postbody sit side-by-side reliably; the searchresults link wraps to its own row below (#27)
+- fix: postprofile in search results is now left-aligned (was inheriting `text-align: center` from the general `.postprofile` rule)
+- removed stale `.search .postprofile { width: 30% }` rule in content.css that conflicted with forms.css's 23.5%
+- same fix applied to pbwow3_heroes and pbwow3_overwatch (which carry their own forms.css overrides)
+- replaced per-file `?hash=...` query strings on `@import` rules with a shared `?v={style_version}` stamp in pbwow3, pbwow3_heroes, and pbwow3_overwatch — one version bump now invalidates all imported CSS files at once, no more per-file hash bookkeeping
+
 3.3.17 (01-03-2026)
 - fix: restore empty videobg.html placeholder, fixing Twig LoaderError crash when video backgrounds are enabled in pbwowExt
 

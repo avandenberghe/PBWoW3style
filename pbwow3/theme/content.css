@@ -1177,11 +1177,6 @@ dd.profile-contact {
 	background-repeat: no-repeat;
 }
 
-/* Poster profile used by search*/
-.search .postprofile {
-	width: 30%;
-}
-
 /* Profile used on view-profile */
 .profile-avatar img {
 	max-width: 100%;
