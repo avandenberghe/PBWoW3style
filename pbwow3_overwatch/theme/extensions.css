@@ -5,12 +5,12 @@
 }
 
 #recent-topics li.row {
+  background: rgba(8, 16, 32, 0.10) !important;
   border-bottom-color: transparent !important;
 }
 
 #recent-topics li.row:hover {
-  /*background-color: transparent !important;*/
-  background: linear-gradient(rgba(99, 107, 133, 1),rgba(96, 102, 128, 1)) !important;
+  background: rgba(0, 0, 0, 0.15) !important;
 }
 
 #recent-topics a.forum-link {

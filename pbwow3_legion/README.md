@@ -6,12 +6,15 @@ World of Warcraft Legion themed style with Illidan video background and custom f
 Author @Sajaki
 
 ## requirements
-- pbWoW 3.3.15 Base style
+- pbWoW 3.3.16 Base style
 
 ## Support
 - https://www.avathar.be/forum/viewforum.php?f=82
 
 ## Changes
+3.3.19 (30-04-2026)
+- updated for phpBB 3.3.16
+
 3.3.16 (22-02-2026)
 - fixed hardcoded assets_version in prosilver stylesheet link
 - removed unnecessary prosilver en/stylesheet.css

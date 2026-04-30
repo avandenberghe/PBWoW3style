@@ -4,12 +4,17 @@
 Author @Paybas, @Sajaki
 
 ## requirements
-- pbWow 3.3.15 Base style
+- pbWow 3.3.16 Base style
 
 ## Support
 - https://www.avathar.be/forum/viewforum.php?f=82
 
 ## Changes
+3.3.19 (30-04-2026)
+- updated for phpBB 3.3.16
+- ported null-safety on `U_NEWEST_POST` in viewforum_body.html (avoids broken anchors when URL is empty) — matches prosilver 3.3.16
+- updated `ul.topiclist dfn` to the accessible visually-hidden pattern (1px clip rect) instead of the legacy `position:absolute; left:-999px` trick — matches prosilver 3.3.16
+
 3.3.16 (22-02-2026)
 - fixed hardcoded assets_version in prosilver stylesheet link
 - removed unnecessary prosilver en/stylesheet.css

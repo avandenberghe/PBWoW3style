@@ -1,4 +1,4 @@
-## PBWoW 3.3.17 Style for phpBB 3.3.15
+## PBWoW 3 Style for phpBB 3.3.15
 
 Author @Paybas, @Sajaki
 
@@ -11,26 +11,36 @@ Author @Paybas, @Sajaki
 - https://www.phpbb.com/customise/db/style/pbwow3/support
 
 ## Changes
+3.3.18 (30-04-2026)
+- fix: search results no longer stack — switched `.search.post > .inner` to flex layout so postprofile (23.5%) and postbody sit side-by-side reliably; the searchresults link wraps to its own row below (#27)
+- fix: postprofile in search results is now left-aligned (was inheriting `text-align: center` from the general `.postprofile` rule)
+- removed stale `.search .postprofile { width: 30% }` rule in content.css that conflicted with forms.css's 23.5%
+- same fix applied to pbwow3_heroes and pbwow3_overwatch (which carry their own forms.css overrides)
+- replaced per-file `?hash=...` query strings on `@import` rules with a shared `?v={style_version}` stamp in pbwow3, pbwow3_heroes, and pbwow3_overwatch — one version bump now invalidates all imported CSS files at once, no more per-file hash bookkeeping
 
 3.3.17 (01-03-2026)
 - fix: restore empty videobg.html placeholder, fixing Twig LoaderError crash when video backgrounds are enabled in pbwowExt
 
 3.3.16 (22-02-2026)
-- fixed hardcoded assets_version in prosilver stylesheet links (all styles)
-- removed unnecessary prosilver en/stylesheet.css (all styles)
-- removed tweaks.css IE conditional (all styles)
-- use T_STYLESHEET_LANG_LINK for language stylesheet (pbwow3)
-- use T_THEME_PATH for bidi.css (pbwow3, heroes)
-- removed empty videobg.html and unused plupload images (pbwow3)
-- updated webfont URL to jsdelivr CDN (pbwow3 simple_header, battlecry)
-- fixed broken template variable in videobg.html (tbc, xmas)
-- fixed style name in header comments (pandaria, xmas)
-- added legion, overwatch, warlords to the same fixes
-- fixed logo stretch and added missing background images (legion)
-- removed dead pbwow.com URLs from header comments and stylesheets (all styles)
+- fixed hardcoded assets_version in prosilver stylesheet link
+- removed unnecessary prosilver en/stylesheet.css
+- use T_STYLESHEET_LANG_LINK for language stylesheet
+- use T_THEME_PATH for bidi.css
+- removed tweaks.css IE conditional (file does not exist)
+- removed empty videobg.html
+- removed unused plupload images
+- updated webfont URL in simple_header.html
 
 3.3.15 (08-02-2026)
 - updated for phpBB 3.3.15
+- updated post display links to use AJAX anchors (viewtopic)
+- added viewtopic_body_postrow_content_before event
+- added viewtopic_body_online_list_after event
+- added forum link type detection in forumlist tooltips
+- updated jQuery fallback to 3.7.1
+- updated autocomplete attributes on login forms
+- simplified search results sort condition
+- updated IE conditional to IE 9
 
 3.3.5 (24-04-2022)
 - updated for phpBB 3.3.5
@@ -126,4 +136,4 @@ This application is opensource software released under the GPL.
 We request that you retain the copyright notice below.
 
 ## Credits 
-Thank you to @Galixte, @shadowfox for supporting 
+Thank you to @Galixte, @shadowfox for supporting

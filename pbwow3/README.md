@@ -1,9 +1,9 @@
-## PBWoW 3 Style for phpBB 3.3.15
+## PBWoW 3 Style for phpBB 3.3.16
 
 Author @Paybas, @Sajaki
 
 ## requirements
-- phpBB 3.3.15 or higher
+- phpBB 3.3.16 or higher
 - pbwowExt (optional)
 
 ## Support
@@ -11,11 +11,19 @@ Author @Paybas, @Sajaki
 - https://www.phpbb.com/customise/db/style/pbwow3/support
 
 ## Changes
+3.3.19 (30-04-2026)
+- aligned with phpBB 3.3.16 prosilver (#28)
+- ported null-safety checks for `U_NEWEST_POST`, `U_VIEW_TOPIC`, `U_LAST_POST` in search_results.html and viewforum_body.html (avoids broken anchors when URLs are empty)
+- fixed watch-forum toggle icon: `data-toggle-class` and the displayed `<i>` now flip in opposite directions on click, matching the prosilver 3.3.16 fix (was inverted in pbwow3, same bug as the prosilver 3.3.15 release)
+- updated `ul.topiclist dfn` to the accessible visually-hidden pattern (1px clip rect) instead of the legacy `position:absolute; left:-999px` trick — now matches prosilver 3.3.16 in pbwow3, pbwow3_heroes, pbwow3_overwatch
+- inherits prosilver `ucp_pm_viewmessage_message_content_before` event and viewtopic_topic_tools watch-icon fix automatically (pbwow3 family does not override those templates)
+- bumped phpbb_version to 3.3.16 across the family
+
 3.3.18 (30-04-2026)
 - fix: search results no longer stack — switched `.search.post > .inner` to flex layout so postprofile (23.5%) and postbody sit side-by-side reliably; the searchresults link wraps to its own row below (#27)
 - fix: postprofile in search results is now left-aligned (was inheriting `text-align: center` from the general `.postprofile` rule)
-- removed stale `.search .postprofile { width: 30% }` rule in content.css that conflicted with forms.css's 23.5%
-- same fix applied to pbwow3_heroes and pbwow3_overwatch (which carry their own forms.css overrides)
+- removed stale `.search .postprofile { width: 30% }` rule in content.css of pbwow3, pbwow3_heroes and pbwow3_overwatch (forms.css's 23.5% always won by source order — dead code)
+- same flex search-layout fix applied to pbwow3_heroes and pbwow3_overwatch (which carry their own forms.css overrides)
 - replaced per-file `?hash=...` query strings on `@import` rules with a shared `?v={style_version}` stamp in pbwow3, pbwow3_heroes, and pbwow3_overwatch — one version bump now invalidates all imported CSS files at once, no more per-file hash bookkeeping
 
 3.3.17 (01-03-2026)
@@ -44,6 +52,7 @@ Author @Paybas, @Sajaki
 
 3.3.5 (24-04-2022)
 - updated for phpBB 3.3.5
+- added pbwow3_diablo
 
 3.3.2 (29-05-2021)
 - updated for phpBB 3.3.4
@@ -135,4 +144,4 @@ This application is opensource software released under the GPL.
 We request that you retain the copyright notice below.
 
 ## Credits 
-Thank you to @Galixte, @shadowfox for supporting 
+Thank you to @Galixte, @shadowfox for supporting

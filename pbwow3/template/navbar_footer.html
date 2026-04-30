@@ -24,8 +24,8 @@
 		</li>
 		{% if U_WATCH_FORUM_LINK and not S_IS_BOT %}
 			<li data-last-responsive="true">
-				<a href="{{ U_WATCH_FORUM_LINK }}" title="{{ S_WATCH_FORUM_TITLE }}" data-ajax="toggle_link" data-toggle-class="icon {% if S_WATCHING_FORUM %}fa-check-square-o{% else %}fa-square-o{% endif %} fa-fw" data-toggle-text="{{ S_WATCH_FORUM_TOGGLE }}" data-toggle-url="{{ U_WATCH_FORUM_TOGGLE }}">
-					<i class="icon {% if S_WATCHING_FORUM %}fa-square-o{% else %}fa-check-square-o{% endif %} fa-fw" aria-hidden="true"></i><span>{{ S_WATCH_FORUM_TITLE }}</span>
+				<a href="{{ U_WATCH_FORUM_LINK }}" title="{{ S_WATCH_FORUM_TITLE }}" data-ajax="toggle_link" data-toggle-class="icon {% if S_WATCHING_FORUM %}fa-square-o{% else %}fa-check-square-o{% endif %} fa-fw" data-toggle-text="{{ S_WATCH_FORUM_TOGGLE }}" data-toggle-url="{{ U_WATCH_FORUM_TOGGLE }}">
+					<i class="icon {% if S_WATCHING_FORUM %}fa-check-square-o{% else %}fa-square-o{% endif %} fa-fw" aria-hidden="true"></i><span>{{ S_WATCH_FORUM_TITLE }}</span>
 				</a>
 			</li>
 		{% endif %}

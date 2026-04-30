@@ -145,6 +145,15 @@ a.button2:link, a.button2:visited, a.button2:active {
     flex-wrap: wrap;
 }
 
+.search .postprofile,
+.search .postprofile dt,
+.search .postprofile dd,
+.search .postprofile a,
+.search .postprofile strong {
+    color: #FFF;
+    font-size: 1em;
+}
+
 .search .postprofile {
     background: none !important;
     flex: 0 0 23.5%;
@@ -153,6 +162,7 @@ a.button2:link, a.button2:visited, a.button2:active {
     text-align: left;
     box-sizing: border-box;
     float: none;
+    text-shadow: none;
 }
 
 .search .postbody {

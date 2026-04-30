@@ -1,15 +1,18 @@
 
-## pbwow3_battlefield
+## pbwow3_battlecry
 
 Author @Paybas, @Sajaki
 
 ## requirements
-- pbWow 3.3.15 Base style
+- pbWow 3.3.16 Base style
 
 ## Support
 - https://www.avathar.be/forum/viewforum.php?f=82
 
 ## Changes
+3.3.19 (30-04-2026)
+- updated for phpBB 3.3.16
+
 3.3.16 (22-02-2026)
 - fixed hardcoded assets_version in prosilver stylesheet link
 - removed unnecessary prosilver en/stylesheet.css
