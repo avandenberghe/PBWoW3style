@@ -12,12 +12,7 @@ Author @Paybas, @Sajaki
 
 ## Changes
 3.3.19 (30-04-2026)
-- aligned with phpBB 3.3.16 prosilver (#28)
-- ported null-safety checks for `U_NEWEST_POST`, `U_VIEW_TOPIC`, `U_LAST_POST` in search_results.html and viewforum_body.html (avoids broken anchors when URLs are empty)
-- fixed watch-forum toggle icon: `data-toggle-class` and the displayed `<i>` now flip in opposite directions on click, matching the prosilver 3.3.16 fix (was inverted in pbwow3, same bug as the prosilver 3.3.15 release)
-- updated `ul.topiclist dfn` to the accessible visually-hidden pattern (1px clip rect) instead of the legacy `position:absolute; left:-999px` trick — now matches prosilver 3.3.16 in pbwow3, pbwow3_heroes, pbwow3_overwatch
-- inherits prosilver `ucp_pm_viewmessage_message_content_before` event and viewtopic_topic_tools watch-icon fix automatically (pbwow3 family does not override those templates)
-- bumped phpbb_version to 3.3.16 across the family
+- updated for phpBB 3.3.16 prosilver (#28)
 
 3.3.18 (30-04-2026)
 - fix: search results no longer stack — switched `.search.post > .inner` to flex layout so postprofile (23.5%) and postbody sit side-by-side reliably; the searchresults link wraps to its own row below (#27)
